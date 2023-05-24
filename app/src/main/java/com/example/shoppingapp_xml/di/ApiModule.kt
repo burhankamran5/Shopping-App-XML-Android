@@ -3,9 +3,11 @@ package com.example.shoppingapp_xml.di
 import android.app.Application
 import android.content.Context
 import com.example.shoppingapp_xml.network.ApiService
+import com.example.shoppingapp_xml.repository.UserRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
@@ -14,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-@InstallIn
+@InstallIn(SingletonComponent::class)
 
 class ApiModule {
 
@@ -40,7 +42,10 @@ class ApiModule {
         return retrofit.create(ApiService::class.java)
     }
 
-
+    @Singleton
+    fun providesUserRepository(apiService: ApiService): UserRepository {
+        return UserRepository(apiService)
+    }
 
 
 }
