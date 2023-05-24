@@ -1,19 +1,19 @@
 package com.example.shoppingapp_xml.ui
 
-import android.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.shoppingapp_xml.databinding.FragmentSplashBinding
+import androidx.fragment.app.Fragment
+import com.example.shoppingapp_xml.databinding.FragmentLoginBinding
 
 
-class SplashFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    var binding: FragmentSplashBinding? = null
+    var binding: FragmentLoginBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentSplashBinding.inflate(inflater, container, false)
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
