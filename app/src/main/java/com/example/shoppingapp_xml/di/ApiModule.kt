@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.example.shoppingapp_xml.network.ApiService
 import com.example.shoppingapp_xml.repository.UserRepository
+import com.example.shoppingapp_xml.services.UserService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,9 +44,13 @@ class ApiModule {
     }
 
     @Singleton
-    fun providesUserRepository(apiService: ApiService): UserRepository {
-        return UserRepository(apiService)
+    fun providesUserRepository(userService: UserService): UserRepository {
+        return UserRepository(userService)
     }
 
+    @Singleton
+    fun providesUserService(apiService: ApiService): UserService {
+        return UserService(apiService)
+    }
 
 }

@@ -3,25 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/background_blue"
     android:layout_height="match_parent"
+    android:background="@color/background_blue"
     tools:context=".ui.SplashFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
     <TextView
-        android:lineSpacingExtra="-10dp"
-        android:paddingStart="20dp"
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/raleway_bold"
+        android:lineSpacingExtra="-10dp"
+        android:paddingStart="20dp"
         android:text="@string/find_your_gadget"
         android:textAlignment="textStart"
         android:textColor="@color/white"
@@ -35,31 +27,27 @@
     <ImageView
         android:id="@+id/splashImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="centerInside"
+        android:layout_height="0dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/splash"
+        android:scaleType="centerInside"
+        android:src="@drawable/test"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/getStartedBtn"
         android:layout_width="317dp"
         android:layout_height="71dp"
-        android:text="@string/get_started"
-        android:textSize="20sp"
-        android:fontFamily="@font/raleway_black_font"
-        android:background="@drawable/rectangle_btn"
-        app:layout_constraintTop_toBottomOf="@+id/splashImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/background_blue"
+        android:layout_marginBottom="50dp"
         android:layout_marginTop="5dp"
-       app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/rectangle_btn"
+        android:fontFamily="@font/raleway_black_font"
+        android:text="@string/get_started"
+        android:textColor="@color/background_blue"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
